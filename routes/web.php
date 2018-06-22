@@ -1,7 +1,5 @@
 <?php
 
-use Symfony\Component\Routing\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,10 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/profile','UsersController@profile');
-Route::post('/profile', 'UserController@update_pro');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+Route::resource('/ads', 'AdController');
